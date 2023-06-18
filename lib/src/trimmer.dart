@@ -223,7 +223,7 @@ class Trimmer {
     }
 
     String trimLengthCommand =
-        ' -ss $startPoint -i "$videoPath" -t ${endPoint - startPoint} -avoid_negative_ts make_zero ';
+        ' -i "$videoPath" -ss $startPoint -to $endPoint -avoid_negative_ts make_zero ';
 
     if (ffmpegCommand == null) {
       command = '$trimLengthCommand -c:a copy ';
